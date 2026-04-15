@@ -1,0 +1,280 @@
+<h3 class="text-primary">Event binding</h3>
+
+
+<h5>Search Product</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+
+<h5>Search Food Item</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+<h5>Search Books</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+<h5>Search Child Clothes</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+<h5>Search Home-Decor Item</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+<h5>Search Elctronics Item</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+<h5>Search Stationary</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+
+<h5>Search Jobs</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+
+<h5>Search Person Number</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+<h5>Search Spices Item</h5>
+<div class="form-group">
+    <input
+    (keyup)="onSearch($event)"
+    type="text" class="form-control">
+</div>
+
+
+
+<h3 class="text-info">Two Way Data Binding</h3>
+
+<h5>Search Country</h5>
+<div class="form-group">
+    <input
+    #countryName
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(countryName)" class="btn btn-block btn-primary">Search Country</button>
+
+<h5>Search Animal</h5>
+<div class="form-group">
+    <input
+    #AnimalName
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(AnimalName)" class="btn btn-block btn-primary">Search Animal</button>
+
+
+<h5>Search Books</h5>
+<div class="form-group">
+    <input
+    #Books
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(Books)" class="btn btn-block btn-primary">Search Books</button>
+
+<h5>Search Hotels</h5>
+<div class="form-group">
+    <input
+    #Hotel
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(Hotel)" class="btn btn-block btn-primary">Search Hotel</button>
+
+<h5>Search Collage</h5>
+<div class="form-group">
+    <input
+    #college
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(college)" class="btn btn-block btn-primary">Search College</button>
+
+<h5>Search School</h5>
+<div class="form-group">
+    <input
+    #school
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(school)" class="btn btn-block btn-primary">Search School</button>
+
+
+<h5>Search university</h5>
+<div class="form-group">
+    <input
+    #university
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(university)" class="btn btn-block btn-primary">Search University</button>
+
+<h5>Search Hostel</h5>
+<div class="form-group">
+    <input
+    #hostel
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(hostel)" class="btn btn-block btn-primary">search Hostel</button>
+
+<h5>Search coaching classes</h5>
+<div class="form-group">
+    <input
+    #class
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(class)" class="btn btn-block btn-primary">search classes</button>
+
+
+<h5>Search Account</h5>
+<div class="form-group">
+    <input
+    #Account
+    type="text" class="form-control">
+</div>
+
+<button 
+(click)="onSearch1(Account)" class="btn btn-block btn-primary">search Account</button>
+
+
+
+
+<h3 class="text-primary mt-3">@Viewchild data binding</h3>
+
+<h5>Search city</h5>
+<div class="form-group">
+    <input
+    #city
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch2()" class="btn btn-block btn-danger">city</button>
+
+
+<h5>Search actor</h5>
+<div class="form-group">
+    <input
+    #actor
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch3()" class="btn btn-block btn-danger">actor</button>
+
+<h5>Search singer</h5>
+<div class="form-group">
+    <input
+    #singer
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch4()" class="btn btn-block btn-danger">singer</button>
+
+<h5>Search politician</h5>
+<div class="form-group">
+    <input
+    #politician
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch5()" class="btn btn-block btn-danger">politician</button>
+
+<h5>Search rich person</h5>
+<div class="form-group">
+    <input
+    #rich
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch6()" class="btn btn-block btn-danger">rich person</button>
+
+<h5>Search artist</h5>
+<div class="form-group">
+    <input
+    #artist
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch7()" class="btn btn-block btn-danger">artist</button>
+
+<h5>Search cartoon</h5>
+<div class="form-group">
+    <input
+    #cartoon
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch8()" class="btn btn-block btn-danger">cartoon</button>
+
+
+<h5>Search film</h5>
+<div class="form-group">
+    <input
+    #film
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch9()" class="btn btn-block btn-danger">film</button>
+
+
+<h5>Search web series</h5>
+<div class="form-group">
+    <input
+    #web
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch10()" class="btn btn-block btn-danger">web series</button>
+
+<h5>Search lawyer</h5>
+<div class="form-group">
+    <input
+    #lawyer
+    type="text" class="form-control">
+</div>
+<button
+(click)="onSearch11()" class="btn btn-block btn-danger">lawyer</button>
