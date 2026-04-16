@@ -8,6 +8,8 @@ import { Component, ElementRef, ViewChild } from "@angular/core";
 
 })
 
+
+
 export class InputComponent{
     onSearch(eve:Event){
         let val=(eve.target as HTMLInputElement).value
