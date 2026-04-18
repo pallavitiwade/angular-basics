@@ -6,11 +6,13 @@ import { ProductComponent } from './shared/components/product/product.component'
 import { ProductsComponent } from './shared/components/products/products.component';
 import { InputComponent } from './shared/components/input/input.component';
 import { todoComponent } from './shared/components/todos/todo.component';
+import { todoComponents } from './shared/components/todo1/todos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    todoComponent
+    todoComponent,
+    todoComponents
   ],
   imports: [
     BrowserModule
