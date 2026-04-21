@@ -1,4 +1,4 @@
-<header class="text-white text-center bg-primary p-2">Todo Task 1</header>
+<header class="text-white text-center bg-primary p-2"><h5>Todo Task-1</h5></header>
 <div class="container mt-5">
 <div class="row">
     <div class="col-md-4 mb-4 mb-md-0">
@@ -6,11 +6,12 @@
             <input #todoControl type="text" class="form-control">
         </div>
 
-        <button *ngIf="!isInEditMode" (click)="onTodoAdd(todoControl)" class="btn btn-sm btn-block bg-primary">Add
+        <button *ngIf="!isInEditMode" (click)="onTodoAdd(todoControl)" class="btn btn-sm btn-block bg-primary text-white">Add
             Todo</button>
 
-        <button *ngIf="isInEditMode" (click)="onUpdate()" class="btn btn-sm btn-block bg-primary">update</button>
+        <button *ngIf="isInEditMode" (click)="onUpdate()" class="btn btn-sm btn-block bg-primary text-white">update</button>
 
+        
         
     </div>
     <div class="col-md-8">
@@ -21,8 +22,8 @@
                     {{todo.todoItem}}
                 </strong>
                 <div>
-                    <button (click)="onEdit(todo)" class="mr-2 btn btn-sm btn-outline-primary">Edit</button>
-                    <button (click)="onRemove(todo.todoId)" class="btn btn-sm btn-outline-danger">Remove</button>
+                    <button (click)="onEdit(todo)" class="mr-2 btn btn-sm bg-primary text-white">Edit</button>
+                    <button (click)="onRemove(todo.todoId)" class="btn btn-sm bg-danger text-white">Remove</button>
 
                 </div>
             </li>

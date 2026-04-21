@@ -9,70 +9,70 @@ import { Itodos } from "./todos";
     styleUrls: ['./todos.component.scss']
 })
 
-export class todoComponents{
-    isInEditMode:boolean=false
+export class todoComponents {
+    isInEditMode: boolean = false
     editObj!: Itodos;
-    todosArr:Array<Itodos>=[
-      {
-            todoItem:'Angular',
-            todoId:'123'
-        },
-       {
-            todoItem:'typescript',
-            todoId:'123'
+    todosArr: Array<Itodos> = [
+        {
+            todoItem: 'Angular',
+            todoId: '123'
         },
         {
-            todoItem:'javascript',
-            todoId:'123'
+            todoItem: 'typescript',
+            todoId: '123'
+        },
+        {
+            todoItem: 'javascript',
+            todoId: '123'
         }
-       
+
     ]
 
-onTodoAdd(ele:HTMLInputElement){
-    let val=ele.value
-    let newTodo:Itodos={
-        todoItem:val,
-        todoId:Date.now().toString()
+    onTodoAdd(ele: HTMLInputElement) {
+        let val = ele.value
+        let newTodo: Itodos = {
+            todoItem: val,
+            todoId: Date.now().toString()
+        }
+
+        this.todosArr.push(newTodo)
+
     }
-
-this.todosArr.push(newTodo)
-
-}
-trackByFun(index:number,item:Itodos){
-    return item.todoId //unique value like ID
-}
-   @ViewChild('todoControl')
+    trackByFun(index: number, item: Itodos) {
+        return item.todoId //unique value like ID
+    }
+    @ViewChild('todoControl')
     todoControl!: ElementRef;
 
-onRemove(id:string){
-    console.log(id)
-    let getIndex=this.todosArr.findIndex(t=>t.todoId===id)
-    this.todosArr.splice(getIndex,1)
+    onRemove(id: string) {
+        console.log(id)
+        let getIndex = this.todosArr.findIndex(t => t.todoId === id)
+        this.todosArr.splice(getIndex, 1)
 
 
-}
+    }
 
-onEdit(todo:Itodos){
-    console.log(todo)
-    this.isInEditMode=true
-    this.editObj=todo;
-    this.todoControl.nativeElement.value=this.editObj.todoItem
-}
+    onEdit(todo: Itodos) {
+        console.log(todo)
+        this.isInEditMode = true
+        this.editObj = todo;
+        this.todoControl.nativeElement.value = this.editObj.todoItem
+    }
 
-onUpdate(){
-let UPDATE_ID=this.editObj.todoId
-let UPDATED_OBJ:Itodos={
-    todoItem:this.todoControl.nativeElement.value,
-    todoId:UPDATE_ID
+    onUpdate() {
+        let UPDATE_ID = this.editObj.todoId
+        let UPDATED_OBJ: Itodos = {
+            todoItem: this.todoControl.nativeElement.value,
+            todoId: UPDATE_ID
 
-}
-let getIndex=this.todosArr.findIndex(t=>t.todoId===UPDATE_ID)
-this.todosArr[getIndex]=UPDATED_OBJ
-this.todoControl.nativeElement.value=''
-this.isInEditMode=false
+        }
+        let getIndex = this.todosArr.findIndex(t => t.todoId === UPDATE_ID)
+        this.todosArr[getIndex] = UPDATED_OBJ
+        this.todoControl.nativeElement.value = ''
+        this.isInEditMode = false
 
 
 
-}
+    }
 
 }

@@ -8,13 +8,15 @@ import { InputComponent } from './shared/components/input/input.component';
 import { todoComponent } from './shared/components/todos/todo.component';
 import { todoComponents } from './shared/components/todo1/todos.component';
 import { planetComponent,} from './shared/components/planet/planet.component';
+import { CardComponent } from './shared/components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     todoComponent,
     todoComponents,
-    planetComponent
+    planetComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule

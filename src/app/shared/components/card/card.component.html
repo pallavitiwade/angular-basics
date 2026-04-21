@@ -1,0 +1,55 @@
+<header class="text-white text-center bg-primary p-2 mt-5">
+    <h5>Cards</h5>
+</header>
+
+<div class="container mt-5">
+<div class="row">
+        <div class="col-md-6 offset-3 mb-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input  #Title type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="body">Content</label>
+                <textarea #body rows="4" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="userId">UserId</label>
+                <select #userId class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+
+
+                </select>
+
+            </div>
+            <button *ngIf="!isInEditMode" (click)="onpostAdd(Title,body,userId)" class="btn-btn-sm btn-block bg-primary text-white">Add post</button>
+            <button *ngIf="isInEditMode" (click)="onUpdate" class="btn-btn-sm btn-block bg-primary text-white">Update Post</button>
+          </div>
+    </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4 shadow-lg" *ngFor="let post of postArr">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-primary">{{post.title}}</h4>
+            </div>
+            <div class="card-body">
+                <p>{{post.body}}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <button (click)="onEdit(post)" class="btn btn-sm bg-primary text-white">Edit</button>
+                <button (click)="onRemove(post.id)" class="btn btn-sm bg-danger text-white">Remove</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
