@@ -4,7 +4,7 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-6 offset-3">
+        <div class="col-md-6 offset-3 mb-4 md-0">
             <div class="card h-100">
                 <div class="card-body">
                     <div class="form-group">
@@ -29,8 +29,8 @@
 
 
 
-    <div class="row mt-5">
-        <div class="col-md-4 mb-4 shadow-lg" *ngFor="let food of foodArr">
+    <div class="row mt-5" *ngIf="foodArr.length > 0 ;else noMenu">
+        <div class="col-md-4 mb-4 shadow-lg" *ngFor="let food of foodArr; trackBy:trackByfood">
             <div class="card h-100">
                 <div class="card-header">
                     <h3>{{food.menuTitle}}</h3>
@@ -46,4 +46,8 @@
             </div>
         </div>
     </div>
+     <ng-template #noMenu>
+            <p class="alert alert-danger">No Menu Items added yet !!!</p>
+        </ng-template>
+
 </div>

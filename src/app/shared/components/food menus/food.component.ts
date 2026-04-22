@@ -65,6 +65,9 @@ export class FoodComponent {
     menuTitle.value = ''
     menuPhoto.value = ''
   }
+   trackByfood(index: number, item: Ifood) {
+      return item.id 
+    }
   onRemove(id: string) {
     let getIndex = this.foodArr.findIndex(
       p => p.id === id

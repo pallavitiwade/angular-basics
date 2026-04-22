@@ -19,6 +19,7 @@ import { FoodComponent } from './shared/components/food menus/food.component';
     planetComponent,
     CardComponent,
     FoodComponent
+
   ],
   imports: [
     BrowserModule

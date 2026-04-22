@@ -21,18 +21,14 @@
                 <input type="text" #numberOfMoons class="form-control">
             </div>
             <button *ngIf="!isInEditMode" (click)="onplanetAdd(planetName,distanceFromSunKm,diameterKm,numberOfMoons)"
-                 class="btn btn-primary btn-block" id="Addbtn">Add planet</button>
+                class="btn btn-primary btn-block" id="Addbtn">Add planet</button>
             <button *ngIf="isInEditMode" (click)="onUpdate()" class="btn btn-primary btn-block">Update</button>
 
 
         </div>
 
-
-
-
-
         <div class="col-md-6">
-            <table class="table table-bordered text-center bg-light">
+            <table class="table table-bordered text-center bg-light" *ngIf="plantsArr.length > 0 ;else notabal">
                 <thead>
                     <tr>
                         <th>SR.No</th>
@@ -46,7 +42,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let plant of plantsArr; let i=index">
+                    <tr *ngFor="let plant of plantsArr; let i=index; trackBy:trackByFun">
                         <td>{{i+1}}</td>
                         <td>{{plant.planetName}}</td>
                         <td>{{plant.distanceFromSunKm}}</td>
@@ -63,6 +59,10 @@
                 </tbody>
 
             </table>
+            <ng-template #notabal>
+                <p class="alert alert-info">No Table Data added yet !!!</p>
+
+            </ng-template>
         </div>
     </div>
 </div>
