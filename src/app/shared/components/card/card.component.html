@@ -1,5 +1,5 @@
 <header class="text-white text-center bg-primary p-2 mt-5">
-    <h5>Cards</h5>
+    <h5>Cards-3</h5>
 </header>
 
 <div class="container mt-5">
@@ -29,7 +29,7 @@
 
             </div>
             <button *ngIf="!isInEditMode" (click)="onpostAdd(Title,body,userId)" class="btn-btn-sm btn-block bg-primary text-white">Add post</button>
-            <button *ngIf="isInEditMode" (click)="onUpdate" class="btn-btn-sm btn-block bg-primary text-white">Update Post</button>
+            <button *ngIf="isInEditMode" (click)="onUpdate()" class="btn-btn-sm btn-block bg-primary text-white">Update Post</button>
           </div>
     </div>
     </div>

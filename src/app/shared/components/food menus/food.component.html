@@ -1,0 +1,49 @@
+<header Class="text-white p-2 text-center bg-danger mt-5">
+    <h5>FOOD MENUS-4</h5>
+</header>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input #menuTitle type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Image</label>
+                        <input #menuPhoto type="text" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <button *ngIf="!isInEditMode" (click)="onfoodAdd(menuTitle,menuPhoto)"
+                            class="btn-btn-sm btn-block bg-danger">Add Menu</button>
+                        <button *ngIf="isInEditMode" (click)="onUpdate()"
+                            class="btn-btn-sm btn-block bg-danger text-white">Update Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row mt-5">
+        <div class="col-md-4 mb-4 shadow-lg" *ngFor="let food of foodArr">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h3>{{food.menuTitle}}</h3>
+                </div>
+                <div class="card-body">
+                    <img src={{food.menuPhoto}}>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <button (click)="onEdit(food)" class="btn btn-sm bg-primary text-white">Edit</button>
+                    <button (click)="onRemove(food.id)" class="btn btn-sm bg-danger text-white">Remove</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
