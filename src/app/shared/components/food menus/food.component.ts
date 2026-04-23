@@ -44,6 +44,7 @@ export class FoodComponent {
       id: '5'
     }
   ];
+  
 
   @ViewChild('menuTitle')
   menuTitle!: ElementRef

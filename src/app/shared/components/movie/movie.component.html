@@ -1,0 +1,52 @@
+<header class="text-white bg-warning p-2 text-center">
+    <h4>Movies-5</h4>
+</header>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input #title type="text" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="img">Image</label>
+                        <input #img type="text" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <button *ngIf="!isInEditMode" (click)="movieAdd(title,img)" 
+                        class="btn btn-sm btn-block bg-warning text-white">Add movie</button>
+                        <button *ngIf="isInEditMode" (click)="onUpdate()" 
+                        class="btn btn-sm btn-block bg-danger text-white">Update</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5" *ngIf="MoviesArr.length>0;else noMovies">
+        <div class="col-md-4 mb-4 shadow-lg" *ngFor="let movie of MoviesArr; trackBy:trackBymovie">
+            <div class="card">
+                <div class="card-header">
+                    <h3>{{movie.title}}</h3>
+                </div>
+                <div class="card-body">
+                    <img src={{movie.img}}>
+                </div>
+                  <div class="card-footer d-flex justify-content-between">
+                    <button (click)="onEdit(movie)" class="btn btn-sm bg-warning text-white">Edit</button>
+                    <button (click)="onRemove(movie.id)" class="btn btn-sm bg-danger text-white">Remove</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noMovies>
+        <p class="alert alert-warning"> NO Movies Added yet !!!</p>
+    </ng-template>
+</div>

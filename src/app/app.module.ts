@@ -10,6 +10,7 @@ import { todoComponents } from './shared/components/todo1/todos.component';
 import { planetComponent,} from './shared/components/planet/planet.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { FoodComponent } from './shared/components/food menus/food.component';
+import { MovieComponent } from './shared/components/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FoodComponent } from './shared/components/food menus/food.component';
     todoComponents,
     planetComponent,
     CardComponent,
-    FoodComponent
+    FoodComponent,
+    MovieComponent
 
   ],
   imports: [
