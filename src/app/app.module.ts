@@ -11,6 +11,17 @@ import { planetComponent,} from './shared/components/planet/planet.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { FoodComponent } from './shared/components/food menus/food.component';
 import { MovieComponent } from './shared/components/movie/movie.component';
+import { StudentComponent } from './shared/components/student/student.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,11 +31,17 @@ import { MovieComponent } from './shared/components/movie/movie.component';
     planetComponent,
     CardComponent,
     FoodComponent,
-    MovieComponent
+    MovieComponent,
+    StudentComponent
 
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

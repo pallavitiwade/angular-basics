@@ -10,7 +10,7 @@ styleUrls:['./movie.component.scss']
 })
 
 export class MovieComponent{
-constructor() {}
+constructor() { }
 
 ngOnInit(): void{
 
@@ -58,7 +58,7 @@ img:HTMLInputElement
 let newMovie:Imovie={
     title:title.value,
     img:img.value,
-    id: Date.now().toString()
+    id:Date.now().toString()
 }
 this.MoviesArr.push(newMovie)
 title.value=''
@@ -84,14 +84,14 @@ img.value=''
         let UPDATE_ID=this.editObj.id
         let UPDATED_OBJ:Imovie={
             title:this.title.nativeElement.value,
-            img:this.title.nativeElement.value,
+            img:this.img.nativeElement.value,
             id:UPDATE_ID
         }
         let getIndex=this.MoviesArr.findIndex(m=>m.id===UPDATE_ID)
 
         this.MoviesArr[getIndex]=UPDATED_OBJ
-        this.title.nativeElement.value,
-        this.img.nativeElement.value,
+        this.title.nativeElement.value='';
+        this.img.nativeElement.value='';
         this.isInEditMode=false
     }
 
