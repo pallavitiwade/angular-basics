@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Ipost } from "./card";
+import { snackBarService } from "../../services/snackbar.service";
 
 @Component({
   selector: './app-card',
@@ -9,7 +10,10 @@ import { Ipost } from "./card";
 
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+        private _snackBar:snackBarService
+    
+  ) { }
   ngOnInit(): void {
 
   }
@@ -63,10 +67,13 @@ export class CardComponent implements OnInit {
       id: Date.now().toString()
 
     }
+
     this.postArr.push(newPost)
     Title.value = ''
     body.value = ''
     userId.value = '1'
+        this._snackBar.openSnackbar(`The ${newPost.title} card is Added succesfully!!!`)
+
   }
   trackBycard(index: number, item: Ipost) {
     return item.id
@@ -75,7 +82,9 @@ export class CardComponent implements OnInit {
     let getIndex = this.postArr.findIndex(
       p => p.id === id
     )
-    this.postArr.splice(getIndex, 1)
+    let removed=this.postArr.splice(getIndex, 1)
+            this._snackBar.openSnackbar(`The ${removed[0].title} card is Removed succesfully!!!`)
+
   }
   onEdit(post: Ipost) {
     this.isInEditMode = true
@@ -98,6 +107,8 @@ export class CardComponent implements OnInit {
     this.body.nativeElement.value = ''
     this.userId.nativeElement.value = '1'
     this.isInEditMode = false
+    this._snackBar.openSnackbar(`The ${UPDATED_OBJ.title} card is Updated succesfully!!!`)
+
   }
 }
 

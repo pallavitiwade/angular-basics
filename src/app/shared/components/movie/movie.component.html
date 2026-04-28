@@ -1,10 +1,14 @@
 <header class="text-white bg-warning p-2 text-center">
-    <h4>Movies-5</h4>
+    <h2>Movies-5</h2>
 </header>
 
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6 mx-auto">
+             <mat-card>
+                <h2 class="text-center">
+                    {{isInEditMode?'Update Movie':'Add Movie'}}
+                </h2>
             <div class="card h-100">
                 <div class="card-body">
                     <div class="form-group">
@@ -26,12 +30,15 @@
                     </div>
                 </div>
             </div>
+            </mat-card>
         </div>
     </div>
 
+
     <div class="row mt-5" *ngIf="MoviesArr.length>0;else noMovies">
-        <div class="col-md-4 mb-4 shadow-lg" *ngFor="let movie of MoviesArr; trackBy:trackBymovie">
+        <div class="col-md-4 mb-0" *ngFor="let movie of MoviesArr; trackBy:trackBymovie">
             <div class="card">
+                <mat-card>
                 <div class="card-header">
                     <h3>{{movie.title}}</h3>
                 </div>
@@ -43,6 +50,7 @@
                     <button (click)="onRemove(movie.id)" class="btn btn-sm bg-danger text-white">Remove</button>
 
                 </div>
+                </mat-card>
             </div>
         </div>
     </div>

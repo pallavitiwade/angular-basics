@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import { Imovie } from "./movie";
+import { snackBarService } from "../../services/snackbar.service";
 
 
 @Component({
@@ -10,7 +11,10 @@ styleUrls:['./movie.component.scss']
 })
 
 export class MovieComponent{
-constructor() { }
+constructor(
+      private _snackBar:snackBarService
+  
+) { }
 
 ngOnInit(): void{
 
@@ -63,16 +67,21 @@ let newMovie:Imovie={
 this.MoviesArr.push(newMovie)
 title.value=''
 img.value=''
+    this._snackBar.openSnackbar(`The ${newMovie.title} is Added succesfully!!!`)
+
 }
   trackBymovie(index: number, item: Imovie) {
       return item.id 
     }
 
+
     onRemove(id:string){
         let getIndex=this.MoviesArr.findIndex(
             m=>m.id===id
         )
-        this.MoviesArr.splice(getIndex,1)
+       let removed= this.MoviesArr.splice(getIndex,1)
+            this._snackBar.openSnackbar(`The ${removed[0].title} is Removed succesfully!!!`)
+
     }
     onEdit(picture:Imovie){
         this.isInEditMode=true;
@@ -93,6 +102,8 @@ img.value=''
         this.title.nativeElement.value='';
         this.img.nativeElement.value='';
         this.isInEditMode=false
+        this._snackBar.openSnackbar(`The ${UPDATED_OBJ.title} is Updated succesfully!!!`)
+
     }
 
 

@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import { Itodos } from "./todos";
+import { snackBarService } from "../../services/snackbar.service";
 
 
 
@@ -10,7 +11,6 @@ import { Itodos } from "./todos";
 })
 
 export class todoComponents {
-    isInEditMode: boolean = false
     editObj!: Itodos;
     todosArr: Array<Itodos> = [
         {
@@ -28,6 +28,7 @@ export class todoComponents {
 
     ]
 
+    isInEditMode:boolean=false
     onTodoAdd(ele: HTMLInputElement) {
         let val = ele.value
         let newTodo: Itodos = {
@@ -36,6 +37,8 @@ export class todoComponents {
         }
 
         this.todosArr.push(newTodo)
+            this._snackBar.openSnackbar(`The ${newTodo.todoItem} is Added succesfully!!!`)
+
 
     }
     trackByFun(index: number, item: Itodos) {
@@ -44,11 +47,16 @@ export class todoComponents {
     @ViewChild('todoControl')
     todoControl!: ElementRef;
 
+    constructor(
+        private _snackBar:snackBarService
+    ){}
+
+
     onRemove(id: string) {
         console.log(id)
         let getIndex = this.todosArr.findIndex(t => t.todoId === id)
-        this.todosArr.splice(getIndex, 1)
-
+        let removed=this.todosArr.splice(getIndex, 1)
+        this._snackBar.openSnackbar(`The ${removed[0].todoItem} is removed succesfully!!!`)
 
     }
 
@@ -70,6 +78,8 @@ export class todoComponents {
         this.todosArr[getIndex] = UPDATED_OBJ
         this.todoControl.nativeElement.value = ''
         this.isInEditMode = false
+            this._snackBar.openSnackbar(`The ${UPDATED_OBJ.todoItem} is Updated succesfully!!!`)
+
 
 
 

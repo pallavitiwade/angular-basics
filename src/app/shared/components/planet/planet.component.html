@@ -1,9 +1,13 @@
 <header class="text-center bg-primary p-2 mt-5 text-white">
-    <h5>planet Task-2</h5>
+    <h2>planet Task-2</h2>
 </header>
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-4 mb-4 md-0">
+            <mat-card>
+                  <h2 class="text-center">
+                    {{isInEditMode?'Update planet':'Add planet'}}
+                </h2>
             <div class="form-group">
                 <label for="planetName">planetName</label>
                 <input type="text" #planetName class="form-control">
@@ -20,14 +24,16 @@
                 <label for="numberOfMoons">numberOfMoons</label>
                 <input type="text" #numberOfMoons class="form-control">
             </div>
-            <button *ngIf="!isInEditMode" (click)="onplanetAdd(planetName,distanceFromSunKm,diameterKm,numberOfMoons)"
-                class="btn btn-primary btn-block" id="Addbtn">Add planet</button>
-            <button *ngIf="isInEditMode" (click)="onUpdate()" class="btn btn-primary btn-block">Update</button>
-
+            <button *ngIf="!isInEditMode"  mat-raised-button color="primary" (click)="onplanetAdd(planetName,distanceFromSunKm,diameterKm,numberOfMoons)"
+                class=" btn-block" id="Addbtn">Add planet</button>
+            <button *ngIf="isInEditMode" mat-raised-button color="primary" (click)="onUpdate()" class="btn-block">Update</button>
+</mat-card>
 
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-8">
+         <mat-card class="table-responsive">
+
             <table class="table table-bordered text-center bg-light" *ngIf="plantsArr.length > 0 ;else notabal">
                 <thead>
                     <tr>
@@ -49,11 +55,13 @@
                         <td>{{plant.diameterKm}}</td>
                         <td>{{plant.numberOfMoons}}</td>
                         <td>
-                            <button (click)="onEdit(plant)" class="mr-2 btn btn-sm bg-primary text-white">Edit</button>
+                            <button (click)="onEdit(plant)" mat-raised-button color="primary"
+                                    class="btn btn-sm">Edit</button>
                         </td>
                         <td>
                             <button (click)="onRemove(plant.pid)"
-                                class="btn btn-sm bg-danger text-white">Remove</button>
+                            mat-raised-button color="warn"
+                                    class="btn btn-sm">Remove</button>
                         </td>
                     </tr>
                 </tbody>
@@ -63,6 +71,7 @@
                 <p class="alert alert-info">No Table Data added yet !!!</p>
 
             </ng-template>
+            </mat-card>
         </div>
     </div>
 </div>

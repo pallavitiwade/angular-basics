@@ -1,18 +1,22 @@
-<header class="text-white text-center bg-primary p-2"><h5>Todo Task-1</h5></header>
+<header class="text-white text-center bg-primary p-2"><h2>Todo Task-1</h2></header>
 <div class="container mt-5">
 <div class="row">
     <div class="col-md-4 mb-4 mb-md-0">
+        <mat-card>
+        <h2 class="text-center">
+                    {{isInEditMode?'Update Todo':'Add Todo'}}
+                </h2>
         <div class="form-group">
             <input #todoControl type="text" class="form-control">
         </div>
 
-        <button *ngIf="!isInEditMode" (click)="onTodoAdd(todoControl)" class="btn btn-sm btn-block bg-primary text-white">Add
+        <button *ngIf="!isInEditMode" mat-raised-button color="primary" (click)="onTodoAdd(todoControl)" class="btn btn-sm btn-block">Add
             Todo</button>
 
-        <button *ngIf="isInEditMode" (click)="onUpdate()" class="btn btn-sm btn-block bg-primary text-white">update</button>
+        <button *ngIf="isInEditMode" mat-raised-button color="primary" (click)="onUpdate()" class="btn btn-sm btn-block bg-primary text-white">update</button>
 
     
-
+</mat-card>
     </div>
     <div class="col-md-8">
         <ul class="list-group" *ngIf="todosArr.length > 0 ;else notodos">
@@ -22,8 +26,10 @@
                     {{todo.todoItem}}
                 </strong>
                 <div>
-                    <button (click)="onEdit(todo)" class="mr-2 btn btn-sm bg-primary text-white">Edit</button>
-                    <button (click)="onRemove(todo.todoId)" class="btn btn-sm bg-danger text-white">Remove</button>
+                    <button (click)="onEdit(todo)" mat-raised-button color="primary"
+                                    class="btn-space">Edit</button>
+                    <button (click)="onRemove(todo.todoId)" mat-raised-button color="warn"
+                                    class="btn btn-sm">Remove</button> 
 
                 </div>
             </li>

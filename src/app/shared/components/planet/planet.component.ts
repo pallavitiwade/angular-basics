@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Iplant } from "./planet";
+import { snackBarService } from "../../services/snackbar.service";
 
 
 
@@ -55,7 +56,10 @@ export class planetComponent {
             pid: '56'
         }
     ];
-    constructor() { }
+    constructor(
+            private _snackBar:snackBarService
+        
+    ) { }
     ngOnInit(): void {
 
     }
@@ -87,6 +91,8 @@ export class planetComponent {
         distanceFromSunKm.value = '';
         diameterKm.value = '';
         numberOfMoons.value = '';
+            this._snackBar.openSnackbar(`The ${newplanet.planetName} is Added succesfully!!!`)
+
     }
     trackByFun(index: number, item: Iplant) {
         return item.pid //unique value like ID
@@ -95,7 +101,9 @@ export class planetComponent {
 
     onRemove(id: string) {
         let getIndex = this.plantsArr.findIndex(p => p.pid === id)
-        this.plantsArr.splice(getIndex, 1)
+        let removed=this.plantsArr.splice(getIndex, 1)
+                    this._snackBar.openSnackbar(`The ${removed[0].planetName} is Removed succesfully!!!`)
+
     }
 
     onEdit(pla: Iplant) {
@@ -122,6 +130,8 @@ export class planetComponent {
         this.distanceFromSunKm.nativeElement.value = '';
         this.diameterKm.nativeElement.value = '';
         this.isInEditMode = false;
+         this._snackBar.openSnackbar(`The ${UPDATED_OBJ.planetName} is Updated succesfully!!!`)
+
     }
 }
 

@@ -1,10 +1,15 @@
 <header Class="text-white p-2 text-center bg-danger mt-5">
-    <h5>FOOD MENUS-4</h5>
+    <h2>FOOD MENUS-4</h2>
 </header>
+
 
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6 mx-auto mb-4 md-0">
+             <mat-card>
+                <h2 class="text-center">
+                    {{isInEditMode?'Update Menu':'Add Menu'}}
+                </h2>
             <div class="card h-100">
                 <div class="card-body">
                     <div class="form-group">
@@ -17,13 +22,14 @@
                     </div>
 
                     <div class="form-group">
-                        <button *ngIf="!isInEditMode" (click)="onfoodAdd(menuTitle,menuPhoto)"
-                            class="btn-btn-sm btn-block bg-danger">Add Menu</button>
-                        <button *ngIf="isInEditMode" (click)="onUpdate()"
-                            class="btn-btn-sm btn-block bg-danger text-white">Update Menu</button>
+                        <button *ngIf="!isInEditMode" mat-raised-button color="warn" (click)="onfoodAdd(menuTitle,menuPhoto)"
+                            class="btn-block">Add Menu</button>
+                        <button *ngIf="isInEditMode" mat-raised-button color="warn" (click)="onUpdate()"
+                            class="btn-block">Update Menu</button>
                     </div>
                 </div>
             </div>
+            </mat-card>
         </div>
     </div>
 
@@ -32,6 +38,7 @@
     <div class="row mt-5" *ngIf="foodArr.length > 0 ;else noMenu">
         <div class="col-md-4 mb-4 shadow-lg" *ngFor="let food of foodArr; trackBy:trackByfood">
             <div class="card h-100">
+                <mat-card>
                 <div class="card-header">
                     <h3>{{food.menuTitle}}</h3>
                 </div>
@@ -39,10 +46,13 @@
                     <img src={{food.menuPhoto}}>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
-                    <button (click)="onEdit(food)" class="btn btn-sm bg-primary text-white">Edit</button>
-                    <button (click)="onRemove(food.id)" class="btn btn-sm bg-danger text-white">Remove</button>
+                    <button (click)="onEdit(food)"  mat-raised-button color="primary"
+                                    class="btn btn-sm">Edit</button>
+                    <button (click)="onRemove(food.id)" mat-raised-button color="warn"
+                                    class="btn btn-sm">Remove</button>
 
                 </div>
+                </mat-card>
             </div>
         </div>
     </div>

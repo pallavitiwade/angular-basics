@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
 import { Ifood } from "./food";
+import { snackBarService } from "../../services/snackbar.service";
 
 
 
@@ -11,7 +12,10 @@ import { Ifood } from "./food";
 
 export class FoodComponent {
 
-  constructor() { }
+  constructor(
+        private _snackBar:snackBarService
+    
+  ) { }
   ngOnInit(): void {
 
   }
@@ -65,6 +69,8 @@ export class FoodComponent {
     this.foodArr.push(newPost)
     menuTitle.value = ''
     menuPhoto.value = ''
+        this._snackBar.openSnackbar(`The ${newPost.menuTitle} is Added succesfully!!!`)
+
   }
    trackByfood(index: number, item: Ifood) {
       return item.id 
@@ -73,7 +79,9 @@ export class FoodComponent {
     let getIndex = this.foodArr.findIndex(
       p => p.id === id
     )
-    this.foodArr.splice(getIndex, 1)
+     let removed=this.foodArr.splice(getIndex, 1)
+   this._snackBar.openSnackbar(`The ${removed[0].menuTitle} is Removed succesfully!!!`)
+
   }
   onEdit(food:Ifood) {
     this.isInEditMode = true;
@@ -95,8 +103,11 @@ export class FoodComponent {
     this.menuTitle.nativeElement.value = ''
     this.menuPhoto.nativeElement.value = ''
     this.isInEditMode = false
+      this._snackBar.openSnackbar(`The ${UPDATED_OBJ.menuTitle} is Updated succesfully!!!`)
+
   }
 }
+
 
 
 

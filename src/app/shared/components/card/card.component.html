@@ -1,10 +1,15 @@
 <header class="text-white text-center bg-primary p-2 mt-5">
-    <h5>Cards-3</h5>
+    <h2>Cards-3</h2>
 </header>
+
 
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6 mx-auto mb-4 md-0">
+             <mat-card>
+                <h2 class="text-center">
+                    {{isInEditMode?'Update Card':'Add Card'}}
+                </h2>
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
@@ -28,29 +33,35 @@
                         </select>
 
                     </div>
-                    <button *ngIf="!isInEditMode" (click)="onpostAdd(Title,body,userId)"
-                        class="btn-btn-sm btn-block bg-primary text-white">Add post</button>
-                    <button *ngIf="isInEditMode" (click)="onUpdate()"
-                        class="btn-btn-sm btn-block bg-primary text-white">Update Post</button>
+                    <button *ngIf="!isInEditMode" mat-raised-button color="primary"  (click)="onpostAdd(Title,body,userId)"
+                        class="btn-block">Add post</button>
+                    <button *ngIf="isInEditMode" mat-raised-button color="primary" (click)="onUpdate()"
+                        class="btn-block">Update Post</button>
                 </div>
             </div>
+            </mat-card>
         </div>
     </div>
 
     <div class="row" *ngIf="postArr.length > 0 ;else nocards">
-        <div class="col-md-4 mb-4 shadow-lg" *ngFor="let post of postArr; trackBy:trackBycard">
+        <div class="col-md-4 mb-4" *ngFor="let post of postArr; trackBy:trackBycard">
+
             <div class="card">
+                <mat-card>
                 <div class="card-header">
-                    <h4 class="text-primary">{{post.title}}</h4>
+                    <h2 class="text-primary">{{post.title}}</h2>
                 </div>
                 <div class="card-body">
                     <p>{{post.body}}</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
-                    <button (click)="onEdit(post)" class="btn btn-sm bg-primary text-white">Edit</button>
-                    <button (click)="onRemove(post.id)" class="btn btn-sm bg-danger text-white">Remove</button>
+                    <button (click)="onEdit(post)" mat-raised-button color="primary"
+                                    class="btn btn-sm">Edit</button>
+                    <button (click)="onRemove(post.id)" mat-raised-button color="warn"
+                                    class="btn btn-sm">Remove</button>
 
                 </div>
+                </mat-card>
             </div>
         </div>
     </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Itodo } from "./todo";
+import { snackBarService } from "../../services/snackbar.service";
 
 
 
@@ -26,7 +27,9 @@ export class todoComponent implements OnInit{
         }
        
     ]
-constructor(){}
+constructor(
+    private _snackBar:snackBarService
+){}
 
 ngOnInit(): void {
   
@@ -53,3 +56,4 @@ onRemove(id:string){
 
 }
 }
+
