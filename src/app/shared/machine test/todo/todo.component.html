@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-4 md-0">
+            <mat-card>
+                <h2 class="text-center">
+                    {{IsinEditMode?'Update Todo':'Add Todo'}}
+
+                </h2>
+                <div class="form-group">
+                    <label for="todoItem">TodoItem</label>
+                    <input type="text" #todoItem class="form-control">
+                </div>
+
+                <button *ngIf="!IsinEditMode" mat-raised-button color="primary" class="btn-block" (click)="Addtodo()">Add Todo</button>
+                <button *ngIf="IsinEditMode" mat-raised-button color="primary" class="btn-block" (click)="onUpdate()">Update</button>
+
+
+            </mat-card>
+        </div>
+
+        <div class="col-md-8">
+            <mat-card>
+            <ul class="list-group" *ngIf="todosArr.length > 0;else Notodo">
+                <li *ngFor="let todo of todosArr; trackBy:trackBytodo"
+                    class="list-group-item d-flex justify-content-between">
+                    <strong>{{todo.todoItem}}</strong>
+
+                    <div>
+                        <button (click)="onEdit(todo)" mat-raised-button color="primary" class="btn-sm mr-2">Edit</button>
+                        <button (click)="onRemove(todo.todoId)" mat-raised-button color="warn" class="btn-sm">Remove</button>
+
+                    </div>
+
+                </li>
+            </ul>
+
+            <ng-template #Notodo>
+                <p class="alert alert-info"> No Todo Added Yet!!!</p>
+            </ng-template>
+            </mat-card>
+        </div>
+    </div>

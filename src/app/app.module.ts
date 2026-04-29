@@ -17,6 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { TodoComponent } from './shared/machine test/todo/todo.component';
+import { studentComponent } from './shared/machine test/todo/students/student.component';
 
 
 
@@ -33,7 +35,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     CardComponent,
     FoodComponent,
     MovieComponent,
-    StudentComponent
+    StudentComponent,
+    TodoComponent,
+    studentComponent
+
 
   ],
   imports: [
