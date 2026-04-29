@@ -7,3 +7,4 @@ export interface Istudent{
     id:string
     
 }
+

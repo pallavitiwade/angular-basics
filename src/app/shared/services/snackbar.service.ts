@@ -17,8 +17,9 @@ export class snackBarService {
         horizontalPosition:'center',
         verticalPosition:'bottom'
 
+        
     })
  }
- 
+
 
 }
