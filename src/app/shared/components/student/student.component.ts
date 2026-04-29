@@ -86,6 +86,7 @@ export class StudentComponent implements OnInit {
 
 
   }
+  
   trackByStudent(index: number, item: Istudent) {
     return item.id
   }
