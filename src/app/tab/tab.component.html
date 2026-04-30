@@ -1,0 +1,60 @@
+<ul class="nav nav-pills">
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedSkill.toLowerCase().includes('html')}"
+            class="nav-link" (click)="onTabChange('html')">html</a></li>
+
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedSkill.toLowerCase().includes('css')}"
+            class="nav-link" (click)="onTabChange('css')">css</a></li>
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedSkill.toLowerCase().includes('javascript')}"
+            class="nav-link" (click)="onTabChange('javascript')">javascript</a></li>
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedSkill.toLowerCase().includes('angular')}"
+            class="nav-link" (click)="onTabChange('angular')">Angular</a></li>
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedSkill.toLowerCase().includes('typescript')}"
+            class="nav-link" (click)="onTabChange('typescript')">Typescript</a></li>
+
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedSkill.toLowerCase().includes('node-js')}"
+            class="nav-link" (click)="onTabChange('node-js')">Node-js</a></li>
+</ul>
+
+<div class="tab-content mt-5">
+    <div class="card" *ngIf="selectedSkill.toLowerCase().includes('html')">
+        <div class="card-body">
+            <strong>HTML</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolore perferendis hic.
+            Quam ad voluptas libero blanditiis quis, quisquam ea.
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedSkill.toLowerCase().includes('css')">
+        <div class="card-body">
+            <strong>CSS</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae neque explicabo rerum
+            eveniet et dolorum asperiores commodi vitae reprehenderit voluptates!
+
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedSkill.toLowerCase().includes('javascript')">
+        <div class="card-body">
+            <strong>JAVASCRIPT</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. A animi pariatur beatae,
+            quidem reiciendis officiis porro distinctio nesciunt nemo sapiente!
+
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedSkill.toLowerCase().includes('angular')">
+        <div class="card-body">
+            <strong>ANGULAR</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique officiis
+            veritatis ex atque repellat quos ut non accusantium assumenda nam?
+
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedSkill.toLowerCase().includes('typescript')">
+        <div class="card-body">
+            <strong>Typescript</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique officiis
+            veritatis ex atque repellat quos ut non accusantium assumenda nam?
+
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedSkill.toLowerCase().includes('node-js')">
+        <div class="card-body">
+            <strong>Node-js</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique officiis
+            veritatis ex atque repellat quos ut non accusantium assumenda nam?
+
+        </div>
+    </div>
+</div>
