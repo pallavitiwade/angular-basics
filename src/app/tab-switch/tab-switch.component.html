@@ -1,0 +1,31 @@
+<ul class="nav nav-pills mb-5">
+
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedFrameWork.toLowerCase().includes('express')}"
+            class="nav-link" (click)="onTabChange('express')">Express</a></li>
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedFrameWork.toLowerCase().includes('angular')}"
+            class="nav-link" (click)="onTabChange('angular')">Angular</a></li>
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedFrameWork.toLowerCase().includes('mongodb')}"
+            class="nav-link" (click)="onTabChange('mongodb')">Mongodb</a></li>
+
+    <li class="nav-item"><a href="javascript:;" [ngClass]="{active:selectedFrameWork.toLowerCase().includes('node-js')}"
+            class="nav-link" (click)="onTabChange('node-js')">Node-js</a></li>
+</ul>
+
+<ng-container [ngSwitch]="selectedFrameWork">
+            <p *ngSwitchCase="'express'" class="alert alert-info"><strong>Express</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolore perferendis hic.
+            Quam ad voluptas libero blanditiis quis, quisquam ea.</p>
+        
+    
+  
+           <p *ngSwitchCase="'angular'" class="alert alert-warning"><strong>ANGULAR</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae neque explicabo rerum
+            eveniet et dolorum asperiores commodi vitae reprehenderit voluptates!</p>
+
+        
+           <p *ngSwitchCase="'mongodb'" class="alert alert-success"><strong>MONGODB</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. A animi pariatur beatae,
+            quidem reiciendis officiis porro distinctio nesciunt nemo sapiente!</p>
+
+           <p *ngSwitchCase="'node-js'" class="alert alert-danger"><strong>Node-js</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique officiis
+            veritatis ex atque repellat quos ut non accusantium assumenda nam?</p>
+
+      </ng-container>
+   

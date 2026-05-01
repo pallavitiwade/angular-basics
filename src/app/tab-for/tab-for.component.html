@@ -1,0 +1,45 @@
+<ul class="nav nav-pills">
+    <li 
+    *ngFor="let tab of tabsArr"
+    class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{active:selectedSkill.toLowerCase().includes(tab.frameWorkName)}"
+        class="nav-link"
+        (click)="onTabChange(tab.frameWorkName)"
+        >
+        {{tab.tabTitle}}</a>
+    </li>
+</ul>
+
+<div class="card mt-4">
+    <ng-container  *ngFor="let tab of tabsArr">
+    <div class="card-body"
+    [innerHTML]="tab.tabContent"
+    *ngIf="selectedSkill.toLowerCase().includes(tab.frameWorkName)"
+    >
+</div>
+</ng-container>
+</div>
+
+<ul class="nav nav-pills mt-5">
+    <li 
+    *ngFor="let tabs of taboneArr"
+    class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{active:Skills.toLowerCase().includes(tabs.frameWorkName)}"
+        class="nav-link"
+        (click)="onTabChanges(tabs.frameWorkName)"
+        >
+        {{tabs.tabTitle}}</a>
+    </li>
+</ul>
+
+<div class="card mt-4">
+    <ng-container  *ngFor="let tabs of taboneArr">
+    <div class="card-body"
+    [innerHTML]="tabs.tabContent"
+    *ngIf="Skills.toLowerCase().includes(tabs.frameWorkName)"
+    >
+</div>
+</ng-container>
+</div>

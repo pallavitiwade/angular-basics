@@ -20,6 +20,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { TodoComponent } from './shared/machine test/todo/todo.component';
 import { studentComponent } from './shared/machine test/todo/students/student.component';
 import { TabComponent } from './tab/tab.component';
+import { TabForComponent } from './tab-for/tab-for.component';
+import { TabSwitchComponent } from './tab-switch/tab-switch.component';
 
 
 
@@ -39,7 +41,9 @@ import { TabComponent } from './tab/tab.component';
     StudentComponent,
     TodoComponent,
     studentComponent,
-    TabComponent
+    TabComponent,
+    TabForComponent,
+    TabSwitchComponent
 
 
   ],
