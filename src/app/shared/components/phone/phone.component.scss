@@ -1,0 +1,39 @@
+@mixin flex-center{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container{
+    height: 300px;
+
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .noImgText{
+        width: 100%;
+        height:100%;
+        background-color: #ededed;
+        @include flex-center
+    }
+
+    
+}
+
+.noprodAval{
+    filter:blur(1px) grayscale(1)
+}
+
+.isnotAvalable{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    @include flex-center
+}

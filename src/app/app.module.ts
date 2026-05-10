@@ -26,6 +26,8 @@ import { PostComponent } from './shared/components/post/post.component';
 import { PostDashboardComponent } from './shared/components/post-dashboard/post-dashboard.component';
 import { MoviesComponent } from './shared/components/movies/movies.component';
 import { MoviesDashboardComponent } from './shared/components/movies-dashboard/movies-dashboard.component';
+import { PhoneComponent } from './shared/components/phone/phone.component';
+import { PhoneDashboardComponent } from './shared/components/phone-dashboard/phone-dashboard.component';
 
 
 
@@ -51,7 +53,9 @@ import { MoviesDashboardComponent } from './shared/components/movies-dashboard/m
     PostComponent,
     PostDashboardComponent,
     MoviesComponent,
-    MoviesDashboardComponent
+    MoviesDashboardComponent,
+    PhoneComponent,
+    PhoneDashboardComponent
 
 
   ],

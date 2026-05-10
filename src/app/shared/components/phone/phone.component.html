@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card-body"
+        [ngClass]="{
+            noprodAval:!getphone.isAvailable
+        }"
+        >
+        <div class="row">
+            <div class="col-md-4">
+                <div class="img-container mb-4">
+                    <img *ngIf="getphone.image;else noImg" [src]="getphone.image" [alt]="getphone.name" [title]="getphone.name" class="w-100">
+                <ng-template #noImg>
+                    <p class="noImgText">No Image</p>
+                </ng-template>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button [disabled]="!getphone.isAvailable" class="btn btn-outline-warning">Add to Cart</button>
+                    <button [disabled]="!getphone.isAvailable" class="btn btn-outline-primary">Buy Now</button>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>{{getphone.name}}
+                <small class="badge" [ngClass="{
+                    'badge-success':getphone.rating >=4,
+                    'badge-warning':getphone.rating>=3 && getphone.rating < 4,
+                    'badge-danger':getphone.rating<3
+                }"]>
+            {{getphone.rating}}
+            </small>
+            </h2>
+
+            <h5>Features</h5>
+            <ul class="list-group list-group-flush">
+             <li class="list-group-item" *ngFor="let feature of getphone.features">{{feature}}</li>
+            </ul>
+            </div>
+         <div class="col-md-2">
+            <h3 class="font-weigh-bold">{{getphone.price -(getphone.price* .15) | currency:'INR'}}
+            <br>
+            <small>
+                <del>
+                    {{getphone.price | currency: 'INR'}}
+                </del>
+            </small>
+            </h3>
+            <strong class="text-success" *ngIf="getphone.noOfItems < 10">only {{getphone.noOfItems}} left !!!</strong>
+         </div>
+        </div>
+        </div>
+
+        <p class="text-danger isnotAvalable" *ngIf="!getphone.isAvailable">product is Not Available</p>
+    </div>
+</div>

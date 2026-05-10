@@ -1,0 +1,11 @@
+
+
+<div class="row" *ngIf="phoneArr.length>0;else Nophone">
+    <div class="col-12 mb-4" *ngFor="let phone of phoneArr">
+        <app-phone [getphone]="phone"></app-phone>
+    </div>
+</div>
+
+<ng-template #Nophone>
+    <p class="alert alert-info">No Phone Data Added Yet !!!</p>
+</ng-template>
