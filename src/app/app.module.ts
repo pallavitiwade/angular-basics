@@ -24,6 +24,8 @@ import { TabForComponent } from './tab-for/tab-for.component';
 import { TabSwitchComponent } from './tab-switch/tab-switch.component';
 import { PostComponent } from './shared/components/post/post.component';
 import { PostDashboardComponent } from './shared/components/post-dashboard/post-dashboard.component';
+import { MoviesComponent } from './shared/components/movies/movies.component';
+import { MoviesDashboardComponent } from './shared/components/movies-dashboard/movies-dashboard.component';
 
 
 
@@ -47,7 +49,9 @@ import { PostDashboardComponent } from './shared/components/post-dashboard/post-
     TabForComponent,
     TabSwitchComponent,
     PostComponent,
-    PostDashboardComponent
+    PostDashboardComponent,
+    MoviesComponent,
+    MoviesDashboardComponent
 
 
   ],

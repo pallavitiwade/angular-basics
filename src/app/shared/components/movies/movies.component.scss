@@ -1,0 +1,45 @@
+.movieCard {
+    height: 450px;
+    overflow: hidden;
+
+    >img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .titleInfo {
+        padding: 15px;
+        background-color: #22254b;
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        .movietitle {
+            height: 28px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+    }
+
+    .overview {
+        padding: 15px;
+        position: absolute;
+        top: 35%;
+        background-color: #fff;
+        height: 65%;
+        padding: 15px;
+        transform: scale(0);
+        opacity: 0;
+        transition: all .4s ease-in-out;
+    }
+}
+
+.movieCard:is(:hover, :focus, :active) .overview{
+    transform: scale(1);
+    opacity: 1;
+}

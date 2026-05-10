@@ -1,0 +1,47 @@
+<div class="card">
+    <figure class="movieCard mb-0">
+        <img src="https://image.tmdb.org/t/p/w500/{{getmovie.backdrop_path || getmovie.poster_path}}" alt="">
+        <figcaption>
+           <div class="titleInfo">
+            <div class="row">
+                <div class="col-10">
+                    <h3 class="m-0 movietitle">
+                        {{getmovie.title || getmovie.original_title}}
+
+                    </h3>
+                </div>
+                <div class="col-2">
+                    <h3 class="m-0">
+                        <span class="badge" [ngClass]="{
+                            'badge-success':getmovie.vote_average >=7,
+                            'badge-warning':getmovie.vote_average >=5 && getmovie.vote_average < 7,
+                             'badge-danger':getmovie.vote_average < 5
+
+                        }">
+                          {{getmovie.vote_average}}
+                        </span>
+
+                    </h3>
+                </div>
+            </div>
+           </div>
+           <div class="overview">
+            <h3 class="m-0">
+                {{getmovie.title || getmovie.original_title}} 
+
+            </h3>
+            <p class="m-0">
+                {{getmovie.overview}}
+
+            </p>
+           </div>
+
+        </figcaption>
+
+    </figure>
+
+
+
+
+</div>
+    
