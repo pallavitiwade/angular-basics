@@ -22,6 +22,8 @@ import { studentComponent } from './shared/machine test/todo/students/student.co
 import { TabComponent } from './tab/tab.component';
 import { TabForComponent } from './tab-for/tab-for.component';
 import { TabSwitchComponent } from './tab-switch/tab-switch.component';
+import { PostComponent } from './shared/components/post/post.component';
+import { PostDashboardComponent } from './shared/components/post-dashboard/post-dashboard.component';
 
 
 
@@ -43,7 +45,9 @@ import { TabSwitchComponent } from './tab-switch/tab-switch.component';
     studentComponent,
     TabComponent,
     TabForComponent,
-    TabSwitchComponent
+    TabSwitchComponent,
+    PostComponent,
+    PostDashboardComponent
 
 
   ],
